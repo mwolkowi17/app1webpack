@@ -12,22 +12,29 @@ import Vue from 'vue/dist/vue.js';
   
   document.body.appendChild(component());*/
 
-  var app = new Vue({
-    el: '#app',
-    data: () => {
-      return {
-         message: "hello vue",
-         //ikon1:"./images/D1_ikona1_wersja2.png",
-         //ikon1seen:true,
-         ikon1:{
-           src: "./images/D1_ikona1_wersja2.png",
-           seen:true
-         },
-         ikon2:"./images/D1_ikona2.png"
-        //ikon1:"https://picsum.photos/id/1005/600/200"
-      }
+var app = new Vue({
+  el: '#app',
+  data: () => {
+    return {
+      message: "hello vue",
+
+      ikon1: {
+        src: "./images/D1_ikona1_wersja2.png",
+        src2: "./images/D1_ikona1_wersja2b.png",
+        seen: true,
+        hover: false
+      },
+      ikon2: "./images/D1_ikona2.png"
+    
+
+    }
+  },
+  methods: {
+    ikon1change1: function() {
+      this.ikon1.hover=false;
+
     },
-    /*render: function(createElement) {
-      return createElement('div', 'Hello world vue');
-    }*/
-  })
+
+  }
+
+})
