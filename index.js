@@ -1,16 +1,6 @@
 import _ from 'lodash';
 import Vue from 'vue/dist/vue.js';
 
-/*function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());*/
 
 var app = new Vue({
   el: '#app',
@@ -24,14 +14,18 @@ var app = new Vue({
         seen: true,
         hover: false
       },
-      ikon2: "./images/D1_ikona2.png"
-    
+      ikon2: "./images/D1_ikona2.png",
+      appbackground: {
+        src: "./images/glowna_Dopalacze1_2x.jpg",
+        widthback: "1600px",
+        heightback: "720px"
+      }
 
     }
   },
   methods: {
-    ikon1change1: function() {
-      this.ikon1.hover=false;
+    ikon1change1: function () {
+      this.ikon1.hover = false;
 
     },
 
