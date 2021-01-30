@@ -61,7 +61,10 @@ var app = new Vue({
     },
     ikon3change1: function (){
       this.ikon3.hover = false;
-      this.appbackground.src="./images/pierwsza_pomoc1_2x.jpg";
+      //this.appbackground.src="./images/pierwsza_pomoc1_2x.jpg";
+      this.appbackground.src="";
+      this.plansza1.src="./images/pierwsza_pomoc1_2x.jpg";
+      this.plansza1.seen =true;
       this.ikon1.seen = false;
       this.ikon2.seen = false;
     },
