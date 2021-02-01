@@ -27,9 +27,13 @@ var app = new Vue({
         hover: false
       },
       appbackground: {
+        
         src: "./images/glowna_Dopalacze1_2x.jpg",
-        widthback: "1600px",
-        heightback: "720px"
+        //widthback: "auto",
+        heightback: "100%",
+        positionback: "center",
+        sizeback: "cover",
+        repetback: "no-repeat"
       },
       video: {
         src:"./images/Dopalacze1_Wplyw_WERSJA2popr2-Ramsar_3000.mp4",
@@ -61,10 +65,10 @@ var app = new Vue({
     },
     ikon3change1: function (){
       this.ikon3.hover = false;
-      //this.appbackground.src="./images/pierwsza_pomoc1_2x.jpg";
-      this.appbackground.src="";
-      this.plansza1.src="./images/pierwsza_pomoc1_2x.jpg";
-      this.plansza1.seen =true;
+      this.appbackground.src="./images/pierwsza_pomoc1_2x.jpg";
+      //this.appbackground.src="";
+      //this.plansza1.src="./images/pierwsza_pomoc1_2x.jpg";
+      this.plansza1.seen =false;
       this.ikon1.seen = false;
       this.ikon2.seen = false;
     },
