@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import Vue from 'vue/dist/vue.js';
-import {planszeA} from './planszeAdane.js'
+import {planszeA} from './planszeAdane.js';
+import {backgrounds} from './backgroundData.js';
+import {videoSources} from './videoData.js';
 
 
 var app = new Vue({
@@ -29,11 +31,13 @@ var app = new Vue({
       },
       appbackground: {
         
-        src: "./images/glowna_Dopalacze1_2x.jpg",
+        
+        src:backgrounds[0]
        
       },
       video: {
-        src:"./images/Dopalacze1_Wplyw_WERSJA2popr2-Ramsar_3000.mp4",
+       
+        src: videoSources[0],
         seen: false
       },
       plansza1: {
@@ -62,7 +66,7 @@ var app = new Vue({
   methods: {
     ikon1change1: function () {
       this.ikon1.hover = false;
-      this.appbackground.src="./images/grzyby1_tlo2.png";
+      this.appbackground.src=backgrounds[1];
       this.ikon2.seen = false;
       this.ikon3.seen = false;
       this.plansza1.seen = true;
@@ -71,7 +75,7 @@ var app = new Vue({
     },
     ikon2change1: function (){
       this.ikon2.hover = false;
-      this.appbackground.src="./images/film.png";
+      this.appbackground.src=backgrounds[2];
       this.ikon1.seen = false;
       this.ikon3.seen = false;
       this.video.seen = true;
@@ -96,7 +100,7 @@ var app = new Vue({
         this.planszeAlicz=0;
         this.plansza1.src=planszeA[this.licznik.planszeAlicz];
         this.ikon1.seen = true;
-        this.appbackground.src="./images/glowna_Dopalacze1_2x.jpg";
+        this.appbackground.src=backgrounds[0];
         this.ikon2.seen = true;
         this.ikon3.seen = true;
         this.plansza1.seen = false;
