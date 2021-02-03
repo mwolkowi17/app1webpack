@@ -164,7 +164,7 @@ var app = new Vue({
         
       }
       
-      this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
+      //this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
       if(this.appbackground.src===planszeB[0])
       {
         this.ikon1.seen = true;
@@ -177,10 +177,10 @@ var app = new Vue({
         this.licznik.planszeBlicz = 0;
        
       }
-      /*
-      if(this.licznik.planszeBlicz!=0){
+      
+      if(this.appbackground.src!=backgrounds[0]){
         this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
-      }*/
+      }
       
       
     }
