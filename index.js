@@ -1,10 +1,10 @@
-import _, { fromPairs } from 'lodash';
+import _, { fromPairs, thru } from 'lodash';
 import Vue from 'vue/dist/vue.js';
 import { planszeA } from './planszeAdane.js';
 import { backgrounds } from './backgroundData.js';
 import { videoSources } from './videoData.js';
-import {planszeB} from './planszeBdane';
-
+import { planszeB } from './planszeBdane.js';
+import { planszeC } from './planszeCdane.js';
 
 var app = new Vue({
   el: '#app',
@@ -58,16 +58,26 @@ var app = new Vue({
       buttonreversekonc: {
         seen: false
       },
+      buttonforwardC: {
+        seen: false
+      },
+      buttonreverseC: {
+        seen: false
+      },
       planszeTypA: {
         src: planszeA
       },
-      planszeTypB:{
-       src: planszeB
+      planszeTypB: {
+        src: planszeB
+      },
+      planszeTypC: {
+        src: planszeC
       },
 
       licznik: {
         planszeAlicz: 0,
-        planszeBlicz: 0
+        planszeBlicz: 0,
+        planszeClicz: 0
       }
 
 
@@ -90,6 +100,8 @@ var app = new Vue({
       this.ikon1.seen = false;
       this.ikon3.seen = false;
       this.video.seen = true;
+      this.buttonreverseC.seen = true;
+      this.buttonforwardC.seen = true;
     },
     ikon3change1: function () {
       this.ikon3.hover = false;
@@ -121,14 +133,14 @@ var app = new Vue({
         this.plansza1.src = planszeA[this.licznik.planszeAlicz];
       }
     },
-    btnrevA: function(){
-      if(this.licznik.planszeAlicz!=0){
+    btnrevA: function () {
+      if (this.licznik.planszeAlicz != 0) {
         this.licznik.planszeAlicz--;
       }
-      
-      
-      if(this.plansza1.src===planszeA[0]){
-        
+
+
+      if (this.plansza1.src === planszeA[0]) {
+
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
         this.ikon2.seen = true;
@@ -138,16 +150,16 @@ var app = new Vue({
         this.buttonforward.seen = false;
         this.licznik.planszeAlicz = 0;
         this.plansza1.src = planszeA[this.licznik.planszeAlicz];
-               
+
       }
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
     },
-    btnforB: function(){
+    btnforB: function () {
       this.licznik.planszeBlicz++;
-      this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz];
+      this.appbackground.src = this.planszeTypB.src[this.licznik.planszeBlicz];
 
-      if (this.licznik.planszeBlicz === 11){
-        this.licznik.planszeBlicz=0;
+      if (this.licznik.planszeBlicz === 11) {
+        this.licznik.planszeBlicz = 0;
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
         this.ikon2.seen = true;
@@ -157,16 +169,14 @@ var app = new Vue({
         this.buttonforwardkonc.seen = false;
       }
     },
-    btnrevB: function(){
-      if(this.licznik.planszeBlicz!=0)
-      {
+    btnrevB: function () {
+      if (this.licznik.planszeBlicz != 0) {
         this.licznik.planszeBlicz--;
-        
+
       }
-      
+
       //this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
-      if(this.appbackground.src===planszeB[0])
-      {
+      if (this.appbackground.src === planszeB[0]) {
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
         this.ikon2.seen = true;
@@ -175,14 +185,30 @@ var app = new Vue({
         this.buttonreversekonc.seen = false;
         this.buttonforwardkonc.seen = false;
         this.licznik.planszeBlicz = 0;
-       
+
+      }
+
+      if (this.appbackground.src != backgrounds[0]) {
+        this.appbackground.src = this.planszeTypB.src[this.licznik.planszeBlicz]
+      }
+
+
+    },
+    btnforC: function () {
+      if (this.video.seen === false) {
+        this.licznik.planszeClicz++;
+        this.appbackground.src =this.planszeTypC.src[this.licznik.planszeClicz];
       }
       
-      if(this.appbackground.src!=backgrounds[0]){
-        this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
+      if (this.licznik.planszeClicz === 0) {
+        
+        this.video.seen = false;
+        this.appbackground.src = this.planszeTypC.src[this.licznik.planszeClicz];
+        //this.appbackground.src = "./images/pytanie1.jpg";
+
       }
-      
-      
+    
+
     }
 
   }
