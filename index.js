@@ -106,8 +106,9 @@ var app = new Vue({
     ikon3change1: function () {
       this.ikon3.hover = false;
       //this.appbackground.src = "./images/pierwsza_pomoc1_2x.jpg";
-      this.appbackground.src = planszeB[0];
+      this.appbackground.src = backgrounds[2];
       this.plansza1.seen = false;
+      this.video.seen = true;
       this.ikon1.seen = false;
       this.ikon2.seen = false;
       this.buttonreversekonc.seen = true;
@@ -118,7 +119,7 @@ var app = new Vue({
       this.licznik.planszeAlicz++
 
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
-      if(this.licznik.planszeAlicz === 5){
+      if (this.licznik.planszeAlicz === 5) {
         this.video.seen = true;
         this.plansza1.seen = false;
       }
@@ -156,14 +157,23 @@ var app = new Vue({
         this.plansza1.src = planszeA[this.licznik.planszeAlicz];
 
       }
-      if(this.licznik.planszeAlicz===4){
-       this.video.seen=false;
-       this.plansza1.seen=true;
+      if (this.licznik.planszeAlicz === 4) {
+        this.video.seen = false;
+        this.plansza1.seen = true;
       }
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
     },
     btnforB: function () {
-      this.licznik.planszeBlicz++;
+      if (this.appbackground.src!=planszeB[0]) {
+        this.licznik.planszeBlicz++;
+      }
+      
+      if (this.video.seen === true) {
+        this.video.seen = false;
+        this.appbackground.src = planszeB[0];
+      }
+     
+
       this.appbackground.src = this.planszeTypB.src[this.licznik.planszeBlicz];
 
       if (this.licznik.planszeBlicz === 11) {
@@ -205,17 +215,17 @@ var app = new Vue({
     btnforC: function () {
       if (this.video.seen === false) {
         this.licznik.planszeClicz++;
-        this.appbackground.src =this.planszeTypC.src[this.licznik.planszeClicz];
+        this.appbackground.src = this.planszeTypC.src[this.licznik.planszeClicz];
       }
-      
+
       if (this.licznik.planszeClicz === 0) {
-        
+
         this.video.seen = false;
         this.appbackground.src = this.planszeTypC.src[this.licznik.planszeClicz];
         //this.appbackground.src = "./images/pytanie1.jpg";
 
       }
-      if(this.licznik.planszeClicz === 8){
+      if (this.licznik.planszeClicz === 8) {
         this.licznik.planszeBlicz = 0;
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
@@ -225,7 +235,7 @@ var app = new Vue({
         this.buttonreverseC.seen = false;
         this.buttonforwardC.seen = false;
       }
-    
+
 
     },
     btnrevC: function () {
@@ -233,11 +243,11 @@ var app = new Vue({
         this.licznik.planszeClicz--;
 
       }
-     
-      if(this.appbackground.src != backgrounds[0]){
+
+      if (this.appbackground.src != backgrounds[0]) {
         this.appbackground.src = this.planszeTypC.src[this.licznik.planszeClicz]
       }
-      if(this.video.seen === true){
+      if (this.video.seen === true) {
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
         this.ikon2.seen = true;
