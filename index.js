@@ -118,8 +118,11 @@ var app = new Vue({
       this.licznik.planszeAlicz++
 
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
-
-      if (this.licznik.planszeAlicz === 5) {
+      if(this.licznik.planszeAlicz === 5){
+        this.video.seen = true;
+        this.plansza1.seen = false;
+      }
+      if (this.licznik.planszeAlicz === 6) {
         this.planszeAlicz = 0;
         this.plansza1.src = planszeA[this.licznik.planszeAlicz];
         this.ikon1.seen = true;
@@ -127,6 +130,7 @@ var app = new Vue({
         this.ikon2.seen = true;
         this.ikon3.seen = true;
         this.plansza1.seen = false;
+        this.video.seen = false;
         this.buttonreverse.seen = false;
         this.buttonforward.seen = false;
         this.licznik.planszeAlicz = 0;
@@ -151,6 +155,10 @@ var app = new Vue({
         this.licznik.planszeAlicz = 0;
         this.plansza1.src = planszeA[this.licznik.planszeAlicz];
 
+      }
+      if(this.licznik.planszeAlicz===4){
+       this.video.seen=false;
+       this.plansza1.seen=true;
       }
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
     },
