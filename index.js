@@ -207,7 +207,42 @@ var app = new Vue({
         //this.appbackground.src = "./images/pytanie1.jpg";
 
       }
+      if(this.licznik.planszeClicz === 8){
+        this.licznik.planszeBlicz = 0;
+        this.ikon1.seen = true;
+        this.appbackground.src = backgrounds[0];
+        this.ikon2.seen = true;
+        this.ikon3.seen = true;
+        //this.plansza1.seen = false;
+        this.buttonreverseC.seen = false;
+        this.buttonforwardC.seen = false;
+      }
     
+
+    },
+    btnrevC: function () {
+      if (this.licznik.planszeClicz != 0) {
+        this.licznik.planszeClicz--;
+
+      }
+     
+      if(this.appbackground.src != backgrounds[0]){
+        this.appbackground.src = this.planszeTypC.src[this.licznik.planszeClicz]
+      }
+      if(this.video.seen === true){
+        this.ikon1.seen = true;
+        this.appbackground.src = backgrounds[0];
+        this.ikon2.seen = true;
+        this.ikon3.seen = true;
+        this.video.seen = false;
+        this.buttonreverseC.seen = false;
+        this.buttonforwardC.seen = false;
+        this.licznik.planszeClicz = 0;
+      }
+      if (this.appbackground.src === planszeC[0]) {
+        this.appbackground.src = backgrounds[2];
+        this.video.seen = true;
+      }
 
     }
 
