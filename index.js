@@ -194,9 +194,10 @@ var app = new Vue({
       }
 
       //this.appbackground.src=this.planszeTypB.src[this.licznik.planszeBlicz]
-      if (this.appbackground.src === planszeB[0]) {
+      if (this.video.seen===true) {
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
+        this.video.seen=false;
         this.ikon2.seen = true;
         this.ikon3.seen = true;
         this.plansza1.seen = false;
@@ -208,6 +209,10 @@ var app = new Vue({
 
       if (this.appbackground.src != backgrounds[0]) {
         this.appbackground.src = this.planszeTypB.src[this.licznik.planszeBlicz]
+      }
+      if (this.appbackground.src===this.planszeTypB.src[0]){
+        this.appbackground.src=backgrounds[2];
+        this.video.seen=true;
       }
 
 
