@@ -5,6 +5,7 @@ import { backgrounds } from './backgroundData.js';
 import { videoSources } from './videoData.js';
 import { planszeB } from './planszeBdane.js';
 import { planszeC } from './planszeCdane.js';
+import {ikonyglowne} from './icons.js'
 
 var app = new Vue({
   el: '#app',
@@ -13,20 +14,20 @@ var app = new Vue({
       message: "hello vue",
 
       ikon1: {
-        src: "./images/D1_ikona1_wersja2.png",
-        src2: "./images/D1_ikona1_wersja2b.png",
+        src: ikonyglowne.first,
+        src2: ikonyglowne.firtscliced,
         seen: true,
         hover: false
       },
       ikon2: {
-        src: "./images/D1_ikona2.png",
-        src2: "./images/D1_ikona2b.png",
+        src: ikonyglowne.second,
+        src2: ikonyglowne.secondcliced,
         seen: true,
         hover: false
       },
       ikon3: {
-        src: "./images/D1_ikona3.png",
-        src2: "./images/D1_ikona3b.png",
+        src: ikonyglowne.third,
+        src2: ikonyglowne.thirdcliced,
         seen: true,
         hover: false
       },
