@@ -165,7 +165,7 @@ var app = new Vue({
       this.plansza1.src = planszeA[this.licznik.planszeAlicz];
     },
     btnforB: function () {
-      if (this.appbackground.src != planszeB[0]) {
+      if (this.appbackground.src != backgrounds[2]) {
         this.licznik.planszeBlicz++;
       }
 
