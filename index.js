@@ -232,7 +232,7 @@ var app = new Vue({
 
       }
       if (this.licznik.planszeClicz === 8) {
-        this.licznik.planszeBlicz = 0;
+        this.licznik.planszeClicz = 0;
         this.ikon1.seen = true;
         this.appbackground.src = backgrounds[0];
         this.ikon2.seen = true;
